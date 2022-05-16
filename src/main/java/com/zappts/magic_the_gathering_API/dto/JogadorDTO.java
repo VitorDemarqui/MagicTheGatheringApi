@@ -2,7 +2,6 @@ package com.zappts.magic_the_gathering_API.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Data
