@@ -36,7 +36,7 @@ public class IdiomaController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable Integer id) {
+    public void deleteById(@PathVariable Integer id) throws IdiomaNotFoundException {
         idiomaService.deleteById(id);
     }
 

@@ -64,18 +64,19 @@ public class JogadorService {
     }
 
     public Jogador createNewJogador(Integer id, JogadorDTO jogadorDTO) throws JogadorNotFoundException {
-        Jogador oldJogador = jogadorRepository.findById(id)
-                .orElseThrow(JogadorNotFoundException::new);
-
         String name = jogadorDTO.getName();
         String email = jogadorDTO.getEmail();
 
-        if(name != null || !name.isEmpty() || !name.isBlank()) {
-            oldJogador.setName(name);
-        } else if (email != null || email.isEmpty() || !email.isBlank()) {
-            oldJogador.setEmail(email);
-        }
+        return jogadorRepository.findById(id)
+                .map(player ->{
+                    if(name != null || !name.isEmpty() || !name.isBlank()) {
+                        player.setName(name);
+                    } else if (email != null || email.isEmpty() || !email.isBlank()) {
+                        player.setEmail(email);
+                    }
+                    return player;
+                })
+                .orElseThrow(JogadorNotFoundException::new);
 
-        return oldJogador;
     }
 }

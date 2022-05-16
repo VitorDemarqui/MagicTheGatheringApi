@@ -47,7 +47,8 @@ public class IdiomaService {
         return idiomaMapper.toDTO(foundPlayer);
     }
 
-    public void deleteById(Integer id) {
+    public void deleteById(Integer id) throws IdiomaNotFoundException{
+        idiomaValidation.verifyIfIsRegistered(id);
         idiomaRepository.deleteById(id);
     }
 

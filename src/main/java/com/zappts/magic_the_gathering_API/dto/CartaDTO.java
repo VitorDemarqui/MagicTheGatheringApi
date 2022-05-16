@@ -1,10 +1,12 @@
 package com.zappts.magic_the_gathering_API.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.zappts.magic_the_gathering_API.entity.Idioma;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Data
 @Getter
@@ -12,7 +14,8 @@ import javax.validation.constraints.Size;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartaDTO {
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
+public class CartaDTO implements Serializable {
     private Integer id;
     @NotNull
     @Size(min = 1, max = 60)
@@ -23,8 +26,7 @@ public class CartaDTO {
     private String edition;
 
     @NotNull
-    @Size(min = 1)
-    private Idioma idIdioma;
+    private Idioma idioma;
 
     @NotNull
     private Boolean foil;

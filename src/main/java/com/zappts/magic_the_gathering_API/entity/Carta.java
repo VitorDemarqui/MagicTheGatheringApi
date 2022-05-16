@@ -25,9 +25,9 @@ public class Carta {
     @Column(name = "edition", nullable = false, length = 50)
     private String edition;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_idioma", nullable = false)
-    private Idioma idIdioma;
+    private Idioma idioma;
 
     @Column(name = "foil", nullable = false)
     private Boolean foil = false;
