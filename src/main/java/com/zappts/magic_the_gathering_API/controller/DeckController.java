@@ -1,9 +1,9 @@
 package com.zappts.magic_the_gathering_API.controller;
 
 import com.zappts.magic_the_gathering_API.dto.DeckDTO;
-import com.zappts.magic_the_gathering_API.exception.DeckException.DeckCardValueIsNotValidException;
-import com.zappts.magic_the_gathering_API.exception.DeckException.DeckNotFoundException;
-import com.zappts.magic_the_gathering_API.exception.DeckException.DeckUserIsNotValidException;
+import com.zappts.magic_the_gathering_API.exception.deckException.DeckCardValueIsNotValidException;
+import com.zappts.magic_the_gathering_API.exception.deckException.DeckNotFoundException;
+import com.zappts.magic_the_gathering_API.exception.deckException.DeckUserIsNotValidException;
 import com.zappts.magic_the_gathering_API.exception.cardException.CardNotFoundException;
 import com.zappts.magic_the_gathering_API.exception.jogadorException.JogadorNotFoundException;
 import com.zappts.magic_the_gathering_API.service.DeckService;

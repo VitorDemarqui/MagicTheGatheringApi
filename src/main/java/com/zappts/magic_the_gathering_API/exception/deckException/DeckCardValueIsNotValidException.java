@@ -1,4 +1,4 @@
-package com.zappts.magic_the_gathering_API.exception.DeckException;
+package com.zappts.magic_the_gathering_API.exception.deckException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

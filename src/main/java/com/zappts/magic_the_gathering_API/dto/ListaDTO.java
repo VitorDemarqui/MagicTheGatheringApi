@@ -1,6 +1,5 @@
 package com.zappts.magic_the_gathering_API.dto;
 
-import com.zappts.magic_the_gathering_API.entity.Carta;
 import com.zappts.magic_the_gathering_API.entity.Jogador;
 import lombok.*;
 
@@ -13,17 +12,13 @@ import javax.validation.constraints.Size;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ListDTO {
+public class ListaDTO {
     private Integer id;
 
     @NotNull
-    @Size(min = 1)
-    private Jogador idJogador;
+    @Size(min = 1, max = 60)
+    private String name;
 
     @NotNull
-    private Carta idCarta;
-
-    @NotNull
-    @Size(min = 1, max = 500)
-    private Integer qtdCarta;
+    private Jogador jogador;
 }

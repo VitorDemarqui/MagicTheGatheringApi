@@ -8,20 +8,16 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "list")
+@Table(name = "listCollection")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class List {
+public class ListCollection {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_jogador", nullable = false)
-    private Jogador idJogador;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_carta", nullable = false)
@@ -29,4 +25,8 @@ public class List {
 
     @Column(name = "qtd_carta", nullable = false)
     private Integer qtdCarta;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_list", nullable = false)
+    private Lista list;
 }
