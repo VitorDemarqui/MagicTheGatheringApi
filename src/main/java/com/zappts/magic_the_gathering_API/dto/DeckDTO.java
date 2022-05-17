@@ -18,11 +18,11 @@ public class DeckDTO {
 
     @NotNull
     @Size(min = 1)
-    private Jogador idJogador;
+    private Jogador jogador;
 
     @NotNull
     @Size(min = 1)
-    private Carta idCarta;
+    private Carta carta;
 
     @NotNull
     @Size(min = 1, max = 500)

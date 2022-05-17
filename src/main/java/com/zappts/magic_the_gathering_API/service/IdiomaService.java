@@ -27,9 +27,9 @@ public class IdiomaService {
         idiomaValidation.verifyIfIsRegistered(idiomaDTO.getName());
 
         Idioma idioma = idiomaMapper.toModel(idiomaDTO);
-        Idioma savedJogador = idiomaRepository.save(idioma);
+        Idioma savedIdioma = idiomaRepository.save(idioma);
 
-        return idiomaMapper.toDTO(savedJogador);
+        return idiomaMapper.toDTO(savedIdioma);
     }
 
     public List<IdiomaDTO> listAll() {
@@ -39,10 +39,8 @@ public class IdiomaService {
                 .collect(Collectors.toList());
     }
 
-    public IdiomaDTO findById(String id) throws IdiomaNotFoundException {
-        Integer idConvert = Integer.parseInt(id);
-
-        Idioma foundPlayer = idiomaRepository.findById(idConvert)
+    public IdiomaDTO findById(Integer id) throws IdiomaNotFoundException {
+        Idioma foundPlayer = idiomaRepository.findById(id)
                 .orElseThrow(IdiomaNotFoundException::new);
         return idiomaMapper.toDTO(foundPlayer);
     }

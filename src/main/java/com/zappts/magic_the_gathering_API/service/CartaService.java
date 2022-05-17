@@ -32,9 +32,9 @@ public class CartaService {
         cardValidation.verifyIfIsRegistered(name, edition, idioma, foil);
 
         Carta carta = cartaMapper.toModel(cartaDTO);
-        Carta savedJogador = cartaRepository.save(carta);
+        Carta savedCarta = cartaRepository.save(carta);
 
-        return cartaMapper.toDTO(savedJogador);
+        return cartaMapper.toDTO(savedCarta);
     }
 
     public List<CartaDTO> listAll() {

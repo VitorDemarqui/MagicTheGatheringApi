@@ -30,7 +30,7 @@ public class IdiomaController {
     }
 
     @GetMapping({"/{id}"})
-    public IdiomaDTO findById(@PathVariable String id) throws IdiomaNotFoundException {
+    public IdiomaDTO findById(@PathVariable Integer id) throws IdiomaNotFoundException {
         return idiomaService.findById(id);
     }
 
