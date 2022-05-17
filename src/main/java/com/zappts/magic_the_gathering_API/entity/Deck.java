@@ -19,13 +19,13 @@ public class Deck {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_jogador", nullable = false)
-    private Jogador idJogador;
+    private Jogador jogador;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_carta", nullable = false)
-    private Carta idCarta;
+    private Carta carta;
 
     @Column(name = "qtd", nullable = false)
     private Integer qtd;
