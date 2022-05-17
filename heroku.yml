@@ -1,5 +1,0 @@
-build:
-  docker:
-    web: Dockerfile
-run:
-  web: cd target && java -jar magic_the_gathering_API.war
