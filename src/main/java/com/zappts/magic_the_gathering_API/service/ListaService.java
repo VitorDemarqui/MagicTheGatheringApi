@@ -1,6 +1,5 @@
 package com.zappts.magic_the_gathering_API.service;
 
-import com.zappts.magic_the_gathering_API.dto.FullCardDTO;
 import com.zappts.magic_the_gathering_API.dto.ListCollectionDTO;
 import com.zappts.magic_the_gathering_API.dto.ListaDTO;
 import com.zappts.magic_the_gathering_API.entity.Carta;

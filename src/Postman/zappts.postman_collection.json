@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "6be6c04d-d82d-4280-9a8f-f79c7d298d57",
+		"name": "zappts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jogador",
+			"item": [
+				{
+					"name": "update Jogador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"roberto\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/jogador/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jogador",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAll Jogador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/jogador/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jogador",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new jogador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Vitor\",\n    \"email\": \"vitordemarqui@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/jogador",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jogador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById Jogador",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/jogador/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jogador",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by id Jogador",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/jogador/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jogador",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Idioma",
+			"item": [
+				{
+					"name": "ListAll Idioma",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/idioma/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"idioma",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new idioma",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Português\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/idioma",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"idioma"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by id Idioma",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/idioma/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"idioma",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById Idioma",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/idioma/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"idioma",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Player Idioma",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Espanhol\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/idioma/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"idioma",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carta",
+			"item": [
+				{
+					"name": "New Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gato Alado\",\n    \"edition\": \"Edição gold\",\n    \"idioma\": {\n        \"id\": 2\n    },\n    \"foil\": false,\n    \"value\": 9.90\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carta",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAll Card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carta?orderBy=value",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carta"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "value"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Card",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foil\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carta/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carta",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById Card",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carta/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by id Card",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carta/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carta",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deck",
+			"item": [
+				{
+					"name": "Add card Deck",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"jogador\": {\n       \"id\": 1\n   },\n   \"carta\": {\n       \"id\": 1\n   },\n   \"qtd\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/deck",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete card Deck",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"id\": 7,\n   \"jogador\": {\n       \"id\": 1\n   },\n   \"qtd\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/deck",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cards Jogador by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/deck/1?orderBy=value",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deck",
+								"1"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "value"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "List Cards",
+					"item": [
+						{
+							"name": "add Card List",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"carta\": {\n        \"id\": 7\n    },\n    \"qtdCarta\": 3,\n    \"list\": {\n        \"id\": 5\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/lista/addCardList?idUsuario=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"lista",
+										"addCardList"
+									],
+									"query": [
+										{
+											"key": "idUsuario",
+											"value": "5"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Cards By id List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/lista/getCardsListById?idList=5&orderBy=value",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"lista",
+										"getCardsListById"
+									],
+									"query": [
+										{
+											"key": "idList",
+											"value": "5"
+										},
+										{
+											"key": "orderBy",
+											"value": "value"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete or remove cards on List",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"carta\": {\n        \"id\": 6\n    },\n    \"qtdCarta\": 7,\n    \"list\": {\n        \"id\": 5\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/lista/deleteCardList?idUsuario=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"lista",
+										"deleteCardList"
+									],
+									"query": [
+										{
+											"key": "idUsuario",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get All Lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/lista",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By id List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/lista/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lista",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jogador\": {\n        \"id\": 5\n    },\n    \"name\": \"vitor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/lista",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lista"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete List",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/lista?idUsuario=5&idLista=4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lista"
+							],
+							"query": [
+								{
+									"key": "idUsuario",
+									"value": "5"
+								},
+								{
+									"key": "idLista",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

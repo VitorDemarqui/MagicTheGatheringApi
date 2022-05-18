@@ -49,12 +49,17 @@ public class DeckService {
 
         Deck deck = deckMapper.toModel(deckDTO);
 
+        Deck deckToSave;
+
         if(deckAtivo != null) {
             Integer qtdDeckAtivo = deckAtivo.getQtd();
-            deck.setQtd(qtdDeckAtivo+qtdDeckDTO);
+            deckAtivo.setQtd(qtdDeckAtivo+qtdDeckDTO);
+            deckToSave = deckAtivo;
+        } else {
+            deckToSave = deck;
         }
 
-        Deck savedDeck = deckRepository.save(deck);
+        Deck savedDeck = deckRepository.save(deckToSave);
         return deckMapper.toDTO(savedDeck);
     }
 
