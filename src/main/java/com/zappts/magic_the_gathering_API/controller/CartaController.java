@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,17 +21,17 @@ public class CartaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CartaDTO createCard(@RequestBody CartaDTO cartaDTO) throws CardAlreadyRegisteredException {
+    public CartaDTO createCard(@RequestBody @Valid CartaDTO cartaDTO) throws CardAlreadyRegisteredException {
         return cardService.createCard(cartaDTO);
     }
 
     @GetMapping
-    public List<CartaDTO> listAllCards() {
-        return cardService.listAll();
+    public List<CartaDTO> listAllCards(@RequestParam String orderBy) {
+        return cardService.listAll(orderBy);
     }
 
     @GetMapping({"/{id}"})
-    public CartaDTO findById(@PathVariable String id) throws CardNotFoundException {
+    public CartaDTO findById(@PathVariable Integer id) throws CardNotFoundException {
         return cardService.findById(id);
     }
 

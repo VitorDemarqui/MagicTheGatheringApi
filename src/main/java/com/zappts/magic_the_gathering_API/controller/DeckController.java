@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -23,13 +24,13 @@ public class DeckController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public DeckDTO addCardDeck(@RequestBody DeckDTO deckDTO) throws JogadorNotFoundException, CardNotFoundException, DeckCardValueIsNotValidException {
+    public DeckDTO addCardDeck(@RequestBody @Valid DeckDTO deckDTO) throws JogadorNotFoundException, CardNotFoundException, DeckCardValueIsNotValidException {
         return deckService.addCardDeck(deckDTO);
     }
 
     @GetMapping({"/{id}"})
-    public List<DeckDTO> listAllByIdPlayer(@PathVariable Integer id) throws JogadorNotFoundException {
-        return deckService.listAllByIdPlayer(id);
+    public List<DeckDTO> listAllByIdPlayer(@PathVariable Integer id, @RequestParam String orderBy) throws JogadorNotFoundException {
+        return deckService.listAllByIdPlayer(id, orderBy);
     }
 
     @DeleteMapping

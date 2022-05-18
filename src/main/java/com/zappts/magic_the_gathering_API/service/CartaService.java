@@ -37,19 +37,27 @@ public class CartaService {
         return cartaMapper.toDTO(savedCarta);
     }
 
-    public List<CartaDTO> listAll() {
-        return cartaRepository.findAll()
+    public List<CartaDTO> listAll(String orderBy) {
+        List<Carta> allCard;
+
+        if(orderBy.equals("value")) {
+            allCard = cartaRepository.findAllOrderByCardValue();
+        } else if (orderBy.equals("name")) {
+            allCard = cartaRepository.findAllOrderByCardName();
+        } else {
+            allCard = cartaRepository.findAll();
+        }
+
+        return allCard
                 .stream()
                 .map(cartaMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
-    public CartaDTO findById(String id) throws CardNotFoundException {
-        Integer idConvert = Integer.parseInt(id);
-
-        Carta foundPlayer = cartaRepository.findById(idConvert)
+    public CartaDTO findById(Integer id) throws CardNotFoundException {
+        Carta foundCard = cartaRepository.findById(id)
                 .orElseThrow(CardNotFoundException::new);
-        return cartaMapper.toDTO(foundPlayer);
+        return cartaMapper.toDTO(foundCard);
     }
 
     public void deleteById(Integer id) throws CardNotFoundException {

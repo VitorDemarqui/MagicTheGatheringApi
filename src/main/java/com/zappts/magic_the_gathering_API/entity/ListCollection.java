@@ -8,7 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "listCollection")
+@Table(name = "list_collection")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,14 +19,14 @@ public class ListCollection {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_carta", nullable = false)
-    private Carta idCarta;
+    private Carta carta;
 
     @Column(name = "qtd_carta", nullable = false)
     private Integer qtdCarta;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_list", nullable = false)
     private Lista list;
 }

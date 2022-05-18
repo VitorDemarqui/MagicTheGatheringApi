@@ -17,11 +17,9 @@ public class DeckDTO {
     private Integer id;
 
     @NotNull
-    @Size(min = 1)
     private Jogador jogador;
 
     @NotNull
-    @Size(min = 1)
     private Carta carta;
 
     @NotNull

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class JogadorController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public JogadorDTO createJogador(@RequestBody JogadorDTO jogadorDTO) throws JogadorAlreadyRegisteredException, JogadorFieldIsNullOrEmptyException {
+    public JogadorDTO createJogador(@RequestBody @Valid JogadorDTO jogadorDTO) throws JogadorAlreadyRegisteredException, JogadorFieldIsNullOrEmptyException {
         jogadorValidation.verifyIfFieldsIsNull(jogadorDTO);
         return jogadorService.createJogador(jogadorDTO);
     }
@@ -34,7 +35,7 @@ public class JogadorController {
     }
 
     @GetMapping({"/{id}"})
-    public JogadorDTO findById(@PathVariable String id) throws JogadorNotFoundException {
+    public JogadorDTO findById(@PathVariable Integer id) throws JogadorNotFoundException {
         return jogadorService.findById(id);
     }
 

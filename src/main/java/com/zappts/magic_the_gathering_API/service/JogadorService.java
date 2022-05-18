@@ -41,10 +41,8 @@ public class JogadorService {
                 .collect(Collectors.toList());
     }
 
-    public JogadorDTO findById(String id) throws JogadorNotFoundException {
-        Integer idConvert = Integer.parseInt(id);
-
-        Jogador foundPlayer = jogadorRepository.findById(idConvert)
+    public JogadorDTO findById(Integer id) throws JogadorNotFoundException {
+        Jogador foundPlayer = jogadorRepository.findById(id)
                 .orElseThrow(JogadorNotFoundException::new);
         return jogadorMapper.toDTO(foundPlayer);
     }

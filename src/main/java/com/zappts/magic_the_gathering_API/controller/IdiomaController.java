@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class IdiomaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public IdiomaDTO createIdioma(@RequestBody IdiomaDTO idiomaDTO) throws IdiomaAlreadyRegisteredException {
+    public IdiomaDTO createIdioma(@RequestBody @Valid IdiomaDTO idiomaDTO) throws IdiomaAlreadyRegisteredException {
         return idiomaService.createIdioma(idiomaDTO);
     }
 

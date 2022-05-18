@@ -58,11 +58,22 @@ public class DeckService {
         return deckMapper.toDTO(savedDeck);
     }
 
-    public List<DeckDTO> listAllByIdPlayer(Integer id) throws JogadorNotFoundException {
+    public List<DeckDTO> listAllByIdPlayer(Integer id, String orderBy) throws JogadorNotFoundException {
         Jogador jogador = jogadorRepository.findById(id)
                 .orElseThrow(JogadorNotFoundException::new);
 
-        return deckRepository.findAllByJogador(jogador)
+        List<Deck> playerDeck;
+
+        if(orderBy.equals("value")) {
+            playerDeck = deckRepository.findAllByJogadorOrderByCardValue(jogador.getId());
+        } else if (orderBy.equals("name")) {
+            playerDeck = deckRepository.findAllByJogadorOrderByCardName(jogador.getId());
+        } else {
+            playerDeck =  deckRepository.findAllByJogador(jogador);
+        }
+
+
+        return playerDeck
                 .stream()
                 .map(cardDeck -> {
                     cardDeck.setJogador(null);

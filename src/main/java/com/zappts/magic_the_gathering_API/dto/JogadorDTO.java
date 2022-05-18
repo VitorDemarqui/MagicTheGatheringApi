@@ -1,8 +1,8 @@
 package com.zappts.magic_the_gathering_API.dto;
 
 import lombok.*;
-
 import javax.validation.constraints.Size;
+
 
 @Data
 @Getter
@@ -16,6 +16,6 @@ public class JogadorDTO {
     @Size(min = 1, max = 60)
     private String name;
 
-    @Size(min = 1, max = 30)
+    @Size(min = 10, max = 30)
     private String email;
 }
