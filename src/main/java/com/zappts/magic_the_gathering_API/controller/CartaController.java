@@ -3,6 +3,7 @@ package com.zappts.magic_the_gathering_API.controller;
 import com.zappts.magic_the_gathering_API.dto.CartaDTO;
 import com.zappts.magic_the_gathering_API.exception.cardException.CardAlreadyRegisteredException;
 import com.zappts.magic_the_gathering_API.exception.cardException.CardNotFoundException;
+import com.zappts.magic_the_gathering_API.exception.idiomaException.IdiomaNotFoundException;
 import com.zappts.magic_the_gathering_API.service.CartaService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class CartaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CartaDTO createCard(@RequestBody @Valid CartaDTO cartaDTO) throws CardAlreadyRegisteredException {
+    public CartaDTO createCard(@RequestBody @Valid CartaDTO cartaDTO) throws CardAlreadyRegisteredException, IdiomaNotFoundException {
         return cardService.createCard(cartaDTO);
     }
 

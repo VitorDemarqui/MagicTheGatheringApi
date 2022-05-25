@@ -5,8 +5,10 @@ import com.zappts.magic_the_gathering_API.entity.Carta;
 import com.zappts.magic_the_gathering_API.entity.Idioma;
 import com.zappts.magic_the_gathering_API.exception.cardException.CardAlreadyRegisteredException;
 import com.zappts.magic_the_gathering_API.exception.cardException.CardNotFoundException;
+import com.zappts.magic_the_gathering_API.exception.idiomaException.IdiomaNotFoundException;
 import com.zappts.magic_the_gathering_API.mapper.CartaMapper;
 import com.zappts.magic_the_gathering_API.repository.CartaRepository;
+import com.zappts.magic_the_gathering_API.repository.IdiomaRepository;
 import com.zappts.magic_the_gathering_API.validation.CardValidation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +24,16 @@ public class CartaService {
     private final CartaRepository cartaRepository;
     private final CardValidation cardValidation;
     private final CartaMapper cartaMapper = CartaMapper.INSTANCE;
+    private final IdiomaRepository idiomaRepository;
 
-    public CartaDTO createCard(CartaDTO cartaDTO) throws CardAlreadyRegisteredException {
+    public CartaDTO createCard(CartaDTO cartaDTO) throws CardAlreadyRegisteredException, IdiomaNotFoundException {
         String name = cartaDTO.getName();
         String edition = cartaDTO.getEdition();
         Idioma idioma = cartaDTO.getIdioma();
         Boolean foil = cartaDTO.getFoil();
+
+        idiomaRepository.findById(cartaDTO.getIdioma().getId())
+                .orElseThrow(IdiomaNotFoundException::new);
 
         cardValidation.verifyIfIsRegistered(name, edition, idioma, foil);
 
