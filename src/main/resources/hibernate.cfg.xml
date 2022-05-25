@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="driverClassName">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/zappts?createDatabaseIfNotExist=true</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">root1234</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+    <mapping class="com.zappts.magic_the_gathering_API.entity.Carta"/>
+    <mapping class="com.zappts.magic_the_gathering_API.entity.Deck"/>
+    <mapping class="com.zappts.magic_the_gathering_API.entity.Idioma"/>
+    <mapping class="com.zappts.magic_the_gathering_API.entity.Jogador"/>
+    <mapping class="com.zappts.magic_the_gathering_API.entity.Lista"/>
+    <mapping class="com.zappts.magic_the_gathering_API.entity.ListCollection"/>
+  </session-factory>
+</hibernate-configuration>
